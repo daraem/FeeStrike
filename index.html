@@ -6,16 +6,28 @@
     <title>Document</title>
 </head>
 <body>
-    <div id="-">
-        <h1>CSfloat</h1>
-        <input type="text">
+    <div>
+        <input type="number" id="entryPrice" placeholder="entry">
+        <input type="number" id="sellPrice" placeholder="sell">
+        <button onclick="addSite()">Add site</button>
+        <div id="newSite"></div>
+    </div>
+
+    <div class="-">
+        <p>CSfloat</p>
         <p id="CSfloatResult"></p>
     </div>
-    <div id="-">
-        <h1>Skinport</h1>
-        <input type="text">
+
+    <div class="-">
+        <p>Skinport</p>
         <p id="SkinportResult"></p>
     </div>
+
+    <div class="-">
+        <p>Steam</p>
+        <p id="steamResult"></p>
+    </div>
+
     <script src="script.js"></script>
 </body>
 </html>
