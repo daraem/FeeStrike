@@ -1,24 +1,110 @@
-#sites {
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+}
+
+.middleDiv {
+    background-color: rgb(115, 230, 191);
+
+    -webkit-box-shadow: 3px 8px 10px 3px #dddddd;
+    -moz-box-shadow: 3px 8px 10px 3px #dddddd;
+    box-shadow: 3px 8px 10px 3px #dddddd;
+}
+
+.middleDiv h1, .middleDiv p {
+    text-align: center;
+}
+
+.middleDiv h1 {
+    font-size: 50px;
+
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+.middleDiv p {
+    margin: 0;
+    margin-bottom: 4%;
+
+    font-size: 25px;
+    color: gray;
+}
+
+.sites {
     display: flex;
     align-items: center;
     justify-content: center;
     gap: 5%;
 }
 
+.site {
+    margin-left: 1%;
+}
+
+#footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+
+    height: 25px;
+
+    background-color: black;
+}
+
+#footer p {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+
+    margin-left: 5%;
+
+    font-size: 15px;
+    color: #dddddd;
+}
+
+#separator {
+    margin: 0;
+    margin-bottom: 2%;
+
+    border-bottom: 3px solid black;
+    width: 100%;
+}
+
 #newSite {
     display: flex;
+}
 
+#mainInput {
+    display: flex;
+    align-items: center;
+    justify-content: center;    
+
+    margin-bottom: 4%;
+    gap: 2%;
+
+}
+
+#inputZone {
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 h1 {
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 
-#mainInput {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 5%;
+p, header {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: xx-large;
+    margin: 0;
+}
+
+p {
     margin-bottom: 5%;
 }
 
@@ -33,16 +119,12 @@ input {
     border-bottom: 1px solid red;
 }
 
-p, header {
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    font-size: xx-large;
-    margin: 0;
-}
+button {
+    width: 90px;
 
-p {
-    margin-bottom: 5%;
-}
+    text-decoration: none;
+    border: 2px solid rgb(115, 230, 191);
+    background-color: white;
+    cursor: pointer;
 
-.site {
-    margin-left: 1%;
 }

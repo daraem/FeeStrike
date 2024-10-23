@@ -7,16 +7,24 @@
     <title>FeeStrike</title>
 </head>
 <body>
-    <div id="mainInput">
-        <div id="inputZone">
-            <input type="number" id="entryPrice" placeholder="entry">
-            <input type="number" id="sellPrice" placeholder="sell">
-            <button onclick="submitSite()">Add site</button>
+    <div class="middleDiv">
+        <div>
+            <h1>FeeStrike</h1>
+            <p>market fee calculator</p>
         </div>
-        <div id="newSite"></div>
     </div>
 
-    <div id="sites">
+    <div id="mainInput">
+        <div id="inputZone">
+            <input type="number" id="entryPrice" placeholder="Entry">
+            <input type="number" id="sellPrice" placeholder="Sell">
+            <button onclick="submitSite()">Add Site</button>
+        </div>
+    </div>
+
+    <div id="separator"></div>
+
+    <div class="sites" id="div1">
         <div class="site">
             <header>CSfloat</header>
             <p id="CSfloatResult"></p>
@@ -31,6 +39,9 @@
             <header>Steam<header>
             <p id="steamResult"></p>
         </div>
+    </div>
+    <div id="footer">
+            <p>Daraem</p>
     </div>
     <script src="script.js"></script>
 </body>

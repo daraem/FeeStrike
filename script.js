@@ -29,12 +29,12 @@ function feeCalc(entryPrice, sellPrice, fee) {
 
 function setSellPrice() {
     taxSites.forEach((i, k) => {
-        console.log(taxSites[k])
         taxSites[k].div.innerHTML = `Sell: ${feeCalc(entryPrice.value, sellPrice.value, (taxSites[k].fee / 100))[0]} <br> Profit: ${feeCalc(entryPrice.value, sellPrice.value, (taxSites[k].fee / 100))[1]}`
         taxSites[k].div.style.color = feeCalc(entryPrice.value, sellPrice.value, (taxSites[k].fee / 100))[2] ? "green" : "red"
     })
 }
 
+siteContainers = 1
 function addSite(name, fee) {
     let siteDiv = document.createElement("div")
     siteDiv.setAttribute("class", "site")
@@ -47,8 +47,18 @@ function addSite(name, fee) {
 
     siteDiv.append(siteName)
     siteDiv.append(siteResult)
-    siteDiv.append(deleteBut)
-    document.getElementById("sites").append(siteDiv)
+    // siteDiv.append(deleteBut)
+    if(document.getElementById(`div${siteContainers}`).childElementCount == 5) {
+        siteContainers += 1;
+        let newContainer = document.createElement("div")
+        newContainer.setAttribute("class", "sites")
+        newContainer.setAttribute("id", `div${siteContainers}`)
+        document.body.append(newContainer)
+        newContainer.append(siteDiv)
+    } else {
+        document.getElementById(`div${siteContainers}`).append(siteDiv)
+    }
+    
 
     setTimeout(() => {
         taxSites.push({
@@ -67,6 +77,10 @@ function addSite(name, fee) {
 }
 
 function submitSite() {
+    let newSite = document.createElement("div")
+    newSite.setAttribute("id", "newSite")
+    document.getElementById("mainInput").append(newSite)
+
     let inputName = document.createElement("input")
     let inputTax = document.createElement("input")
     let submitButton = document.createElement("Button")
@@ -74,10 +88,11 @@ function submitSite() {
     
     inputName.setAttribute("placeholder", "name")
     inputTax.setAttribute("placeholder", "fee")
+    inputTax.setAttribute("type", "number")
 
-    document.getElementById("newSite").append(inputName)
-    document.getElementById("newSite").append(inputTax)
-    document.getElementById("newSite").append(submitButton)
+    newSite.append(inputName)
+    newSite.append(inputTax)
+    newSite.append(submitButton)
 
     submitButton.addEventListener("click", () => {
         addSite(inputName.value, inputTax.value)
@@ -85,7 +100,8 @@ function submitSite() {
             inputName.remove()
             inputTax.remove()
             submitButton.remove()
-        }, 100)
+            newSite.remove()
+        }, 50)
     })
 }
 
@@ -108,3 +124,4 @@ function submitSite() {
         }, 1)
     })
 })
+
