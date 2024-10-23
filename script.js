@@ -30,13 +30,14 @@ function feeCalc(entryPrice, sellPrice, fee) {
 function setSellPrice() {
     taxSites.forEach((i, k) => {
         console.log(taxSites[k])
-        taxSites[k].div.innerHTML = `Sell: ${feeCalc(entryPrice.value, sellPrice.value, (taxSites[k].fee / 100))[0]} | Profit: ${feeCalc(entryPrice.value, sellPrice.value, (taxSites[k].fee / 100))[1]}`
+        taxSites[k].div.innerHTML = `Sell: ${feeCalc(entryPrice.value, sellPrice.value, (taxSites[k].fee / 100))[0]} <br> Profit: ${feeCalc(entryPrice.value, sellPrice.value, (taxSites[k].fee / 100))[1]}`
         taxSites[k].div.style.color = feeCalc(entryPrice.value, sellPrice.value, (taxSites[k].fee / 100))[2] ? "green" : "red"
     })
 }
 
 function addSite(name, fee) {
     let siteDiv = document.createElement("div")
+    siteDiv.setAttribute("class", "site")
     let siteName = document.createElement("p")
     let siteResult = document.createElement("p")
     let deleteBut = document.createElement("button")
@@ -47,7 +48,7 @@ function addSite(name, fee) {
     siteDiv.append(siteName)
     siteDiv.append(siteResult)
     siteDiv.append(deleteBut)
-    document.body.append(siteDiv)
+    document.getElementById("sites").append(siteDiv)
 
     setTimeout(() => {
         taxSites.push({

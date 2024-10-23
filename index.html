@@ -3,31 +3,35 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <title>FeeStrike</title>
 </head>
 <body>
-    <div>
-        <input type="number" id="entryPrice" placeholder="entry">
-        <input type="number" id="sellPrice" placeholder="sell">
-        <button onclick="submitSite()">Add site</button>
+    <div id="mainInput">
+        <div id="inputZone">
+            <input type="number" id="entryPrice" placeholder="entry">
+            <input type="number" id="sellPrice" placeholder="sell">
+            <button onclick="submitSite()">Add site</button>
+        </div>
         <div id="newSite"></div>
     </div>
 
-    <div class="-">
-        <p>CSfloat</p>
-        <p id="CSfloatResult"></p>
+    <div id="sites">
+        <div class="site">
+            <header>CSfloat</header>
+            <p id="CSfloatResult"></p>
+        </div>
+    
+        <div class="site">
+            <header>Skinport</header>
+            <p id="SkinportResult"></p>
+        </div>
+    
+        <div class="site">
+            <header>Steam<header>
+            <p id="steamResult"></p>
+        </div>
     </div>
-
-    <div class="-">
-        <p>Skinport</p>
-        <p id="SkinportResult"></p>
-    </div>
-
-    <div class="-">
-        <p>Steam</p>
-        <p id="steamResult"></p>
-    </div>
-
     <script src="script.js"></script>
 </body>
 </html>
